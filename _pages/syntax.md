@@ -74,7 +74,7 @@ until a > 0
 
 ## Compound assignments
 
-Luau supports compound assignments with the following operators: `+=`, `-=`, `*=`, `/=`, `%=`, `^=`, `..=`. Just like regular assignments, compound assignments are statements, not expressions:
+Luau supports compound assignments with the following operators: `+=`, `-=`, `*=`, `/=`, `//=`, `%=`, `^=`, `..=`. Just like regular assignments, compound assignments are statements, not expressions:
 
 ```lua
 -- this works
@@ -279,3 +279,11 @@ Function calls with a backtick string literal without parenthesis is not support
 Luau implements support for floor division operator (`//`) for numbers as well as support for `__idiv` metamethod. The syntax and semantics follow [Lua 5.3](https://www.lua.org/manual/5.3/manual.html#3.4.1).
 
 For numbers, `a // b` is equal to `math.floor(a / b)`; when `b` is 0, `a // b` results in infinity or NaN as appropriate.
+
+Compound assignments are supported with `//=`: 
+
+```lua
+local a = 4.2
+a //= 2
+print(a) --> 2
+```
